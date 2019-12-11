@@ -1,0 +1,88 @@
+.footer {
+	background: #1e1e1e;
+	color: #fff;
+	padding: 30px 0;
+
+	&__bottom-content {
+		display: flex;
+		justify-content: space-between;
+		height: 2rem;
+	}
+}
+.footer .col-6{
+	padding-right: 1px;
+	padding-left: 1px;
+}
+.footer a {
+	display: block;
+	color: #fff;
+	line-height: 30px;
+}
+.footer a:hover {
+	text-decoration: none;
+}
+.bottom {
+	color: #9c9c9c;
+	padding-top: 10px;
+}
+.bottom a {
+	color: #9c9c9c;
+	line-height: 1.5;
+}
+.Search {
+	text-align: right;
+	padding-bottom: 5px;
+}
+.FooterLogo p {
+	margin: 0;
+}
+.Footerlogo img {
+	margin-bottom: 15px;
+	height: 41px;
+	width: 40px;
+	margin-right: 10px;
+}
+.Footerlogo h4 {
+	display: inline-block;
+}
+.FooterLogo img {
+	padding-bottom: 10px;
+
+}
+.FooterIcon .topbar-icon {
+	float: left;
+	margin: 3px 15px 0px 0px;
+}
+.FooterIcon {
+	padding-left: 20px;
+}
+.FooterIcon p {
+	line-height: 30px;
+	margin-bottom: 0px;
+}
+.FooterIcon a {
+	display: inline-block;
+	line-height: 16px;
+}
+.Search .topbar-icon {
+	height: 14px;
+	overflow: visible;
+	position: relative;
+}
+.footimg {
+	width: 100%;
+}
+
+.search-bar {
+	&__wrapper {
+		svg {
+			overflow: visible;
+			margin-left: 1rem;
+		}
+
+		display: flex;
+		flex-grow: 1;
+		justify-content: flex-end;
+		margin-left: 1rem;
+	}
+}

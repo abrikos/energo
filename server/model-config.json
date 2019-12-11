@@ -1,0 +1,202 @@
+{
+	"_meta": {
+		"sources": ["loopback/common/models", "loopback/server/models", "../common/models"],
+		"mixins": ["loopback/common/mixins", "loopback/server/mixins", "../common/mixins"]
+	},
+	"Email": {
+		"dataSource": "mail",
+		"public": false
+	},
+	"Telegram": {
+		"dataSource": "telegram",
+		"public": false
+	},
+	"User": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"Audit": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"AccessToken": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"ACL": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"RoleMapping": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"Role": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"Setting": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"Container": {
+		"dataSource": "storage",
+		"public": true
+	},
+	"Attachment": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"Comment": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"Branch": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"Station": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"Partner": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"MainSlider": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"Article": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"Council": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"Shareholder": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"Purchase": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"Information": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"CategoryRecord": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+
+	"CategoryRecordFile": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"Gallery": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"CompanyInfo": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"Connection": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+
+	"Tariff": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+
+	"Other": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+
+	"TradeUnion": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"Realization": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"Vacancy": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"Message": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"ElectricalSafety": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"Direction": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"SiteConfig": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"AboutCompany": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"ForCustomers": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"Trend": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	},
+	"Veteran": {
+		"dataSource": "postgres",
+		"public": true,
+		"strict": false
+	}
+}

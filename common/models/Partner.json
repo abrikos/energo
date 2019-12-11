@@ -1,0 +1,50 @@
+{
+	"name": "Partner",
+	"description": "Партнер",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"idInjection": true,
+		"validateUpsert": true
+	},
+	"mixins": {
+		"Owner": true,
+		"TimeStamp": true
+	},
+	"properties": {
+		"name": {
+			"type": "string",
+			"required": true,
+			"description": "Название партнера"
+		},
+		"link": {
+			"type": "string",
+			"description": "ссылка"
+		},
+		"thumbnail": {
+			"type": "string",
+			"description": "Изображение партнера"
+		}
+	},
+	"validations": [],
+	"relations": {},
+	"acls": [
+		{
+			"principalType": "ROLE",
+			"principalId": "admin",
+			"permission": "ALLOW"
+		},
+		{
+			"principalType": "ROLE",
+			"principalId": "user",
+			"permission": "ALLOW"
+		},
+		{
+			"principalType": "ROLE",
+			"principalId": "$unauthenticated",
+			"permission": "ALLOW",
+			"accessType": "READ"
+		}
+	],
+	"methods": {}
+}

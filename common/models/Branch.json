@@ -1,0 +1,80 @@
+{
+	"name": "Branch",
+	"description": "Филиал",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"idInjection": true,
+		"validateUpsert": true
+	},
+	"mixins": {
+		"Owner": true,
+		"TimeStamp": true
+	},
+	"properties": {
+		"name": {
+			"type": "string",
+			"required": true,
+			"description": "Название филиала"
+		},
+		"address": {
+			"type": "string",
+			"description": "Адресс"
+		},
+		"head": {
+			"type": "string",
+			"description": "Начальник"
+		},
+		"headPhone": {
+			"type": "string",
+			"description": "Телефон начальника"
+		},
+		"engineer": {
+			"type": "string",
+			"descriptions": "Главный инженер"
+		},
+		"engineerPhone": {
+			"type": "string",
+			"descriptions": "Телефон главного инженера"
+		},
+		"email": {
+			"type": "string",
+			"descriptions": "email"
+		},
+		"power": {
+			"type": "Number",
+			"description": "Мощность, кВт"
+		},
+		"info": {
+			"type": "string",
+			"description": "Информация"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"stations": {
+			"type": "hasAndBelongsToMany",
+			"model": "Station",
+			"description": "Станции"
+		}
+	},
+	"acls": [
+		{
+			"principalType": "ROLE",
+			"principalId": "admin",
+			"permission": "ALLOW"
+		},
+		{
+			"principalType": "ROLE",
+			"principalId": "user",
+			"permission": "ALLOW"
+		},
+		{
+			"principalType": "ROLE",
+			"principalId": "$unauthenticated",
+			"permission": "ALLOW",
+			"accessType": "READ"
+		}
+	],
+	"methods": {}
+}

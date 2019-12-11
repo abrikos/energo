@@ -1,0 +1,51 @@
+{
+	"name": "Information",
+	"description": "Раскрытие информации",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"idInjection": true,
+		"validateUpsert": true
+	},
+	"mixins": {
+		"Owner": true,
+		"TimeStamp": true
+	},
+	"properties": {
+		"category": {
+			"type": "string",
+			"required": true,
+			"description": "Название категории"
+		},
+		"hide": {
+			"type": "Boolean",
+			"description": "Скрыть из открытого контура"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"categoryRecords": {
+			"type": "hasAndBelongsToMany",
+			"model": "CategoryRecord"
+		}
+	},
+	"acls": [
+		{
+			"principalType": "ROLE",
+			"principalId": "admin",
+			"permission": "ALLOW"
+		},
+		{
+			"principalType": "ROLE",
+			"principalId": "user",
+			"permission": "ALLOW"
+		},
+		{
+			"principalType": "ROLE",
+			"principalId": "$unauthenticated",
+			"permission": "ALLOW",
+			"accessType": "READ"
+		}
+	],
+	"methods": {}
+}

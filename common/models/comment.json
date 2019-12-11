@@ -1,0 +1,42 @@
+{
+  "name": "Comment",
+  "description": "Комментарии",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "idInjection": true
+  },
+  "mixins": {
+    "Owner": true,
+    "TimeStamp": true
+  },
+  "properties": {
+    "text": {
+      "type": "string",
+      "required": false,
+      "index": true,
+      "description": "Текст комментария"
+    },
+    "date": {
+      "type": "Date",
+      "required": false,
+      "index": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "attachments": {
+      "type": "hasAndBelongsToMany",
+      "model": "Attachment"
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

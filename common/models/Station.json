@@ -1,0 +1,36 @@
+{
+	"name": "Station",
+	"base": "PersistedModel",
+	"description": "Станций филиалов",
+	"options": {
+		"validateUpsert": true,
+		"idInjection": true
+	},
+	"mixins": {
+		"Owner": true,
+		"TimeStamp": true
+	},
+	"properties": {
+		"name": {
+			"type": "string",
+			"required": true,
+			"description": "Имя станции"
+		}
+	},
+	"relations": {
+		"branches": {
+			"type": "hasAndBelongsToMany",
+			"model": "Branch",
+			"description": "Филилалы"
+		}
+	},
+	"validations": [],
+	"acls": [
+		{
+			"principalType": "ROLE",
+			"principalId": "admin",
+			"permission": "ALLOW"
+		}
+	],
+	"methods": {}
+}

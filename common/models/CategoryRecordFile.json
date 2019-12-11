@@ -1,0 +1,53 @@
+{
+	"name": "CategoryRecordFile",
+	"description": "Файл записи",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+	"mixins": {
+		"Owner": true,
+		"TimeStamp": true,
+		"Search": true
+	},
+	"properties": {
+		"name": {
+			"type": "String",
+			"index": true,
+			"description": "Заголовок"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"record": {
+			"type": "belongsTo",
+			"model": "CategoryRecord",
+			"foreignKey": "categoryRecordId",
+			"description": "Запись"
+		},
+		"attachments": {
+			"type": "hasAndBelongsToMany",
+			"model": "Attachment"
+		}
+	},
+	"acls": [
+		{
+			"principalType": "ROLE",
+			"principalId": "admin",
+			"permission": "ALLOW"
+		},
+		{
+			"principalType": "ROLE",
+			"principalId": "user",
+			"permission": "ALLOW"
+		},
+		{
+			"principalType": "ROLE",
+			"principalId": "$unauthenticated",
+			"permission": "ALLOW",
+			"accessType": "READ"
+		}
+	],
+	"methods": {}
+}

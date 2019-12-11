@@ -1,0 +1,53 @@
+{
+	"name": "Attachment",
+	"description": "Прикрепленные файлы",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+	"mixins": {
+		"Owner": true,
+		"TimeStamp": true
+	},
+	"properties": {
+		"name": {
+			"type": "string",
+			"required": false,
+			"index": true,
+			"description": "Название аттача"
+		},
+		"filename": {
+			"type": "string",
+			"required": false,
+			"index": true,
+			"description": "Полное имя файла как оно было загружено"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"comments": {
+			"type": "hasAndBelongsToMany",
+			"model": "Comment"
+		}
+	},
+	"acls": [
+		{
+			"principalType": "ROLE",
+			"principalId": "admin",
+			"permission": "ALLOW"
+		},
+		{
+			"principalType": "ROLE",
+			"principalId": "user",
+			"permission": "ALLOW"
+		},
+		{
+			"principalType": "ROLE",
+			"principalId": "$unauthenticated",
+			"permission": "ALLOW",
+			"accessType": "READ"
+		}
+	],
+	"methods": {}
+}

@@ -1,0 +1,54 @@
+{
+	"name": "Direction",
+	"description": "Руководство",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+	"mixins": {
+		"Owner": true,
+		"TimeStamp": true,
+		"Search": true
+	},
+	"properties": {
+		"post": {
+			"type": "String",
+			"index": true,
+			"required": true,
+			"description": "Должность"
+		},
+		"name": {
+			"type": "String",
+			"index": true,
+			"required": true,
+			"description": "ФИО представителя"
+		},
+		"thumbnail": {
+			"type": "String",
+			"index": true,
+			"description": "Миниатюра"
+		}
+	},
+	"validations": [],
+	"relations": {},
+	"acls": [
+		{
+			"principalType": "ROLE",
+			"principalId": "admin",
+			"permission": "ALLOW"
+		},
+		{
+			"principalType": "ROLE",
+			"principalId": "user",
+			"permission": "ALLOW"
+		},
+		{
+			"principalType": "ROLE",
+			"principalId": "$unauthenticated",
+			"permission": "ALLOW",
+			"accessType": "READ"
+		}
+	],
+	"methods": {}
+}

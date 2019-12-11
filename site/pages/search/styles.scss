@@ -1,0 +1,18 @@
+.btn-search {
+	display: inline-block;
+	width: 30px !important;
+	height: 2rem;
+	cursor: pointer;
+
+	&:hover {
+		color: #245B8D;
+	}
+}
+
+.search-results {
+	margin-top: 1rem;
+
+	&__header {
+		margin-top: 1rem;
+	}
+}

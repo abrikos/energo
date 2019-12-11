@@ -1,0 +1,42 @@
+.header {
+	background: './tower.jpg';
+}
+
+.top-navbar {
+	height: 132px;
+	// background: url('./001.jpg');
+
+	.navbar-item {
+		margin: 1rem;
+
+		.navbar-link {
+			font-family: Montserrat;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 16px;
+			line-height: 27px;
+
+			color: #000000;
+		}
+	}
+}
+.active {
+	a {
+		color: blue !important;
+	}
+}
+
+.topbar {
+	// position: absolute;
+	// width: 1920px;
+	height: 44px;
+	// left: 0px;
+	top: 44px;
+
+	background: #FF5208;
+}
+
+.topbar-icon {
+	fill: white;
+	cursor: pointer;
+}

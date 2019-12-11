@@ -1,0 +1,100 @@
+{
+	"name": "CategoryRecord",
+	"description": "Запись для разделов Аукционерам, Информация, Закупки",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"idInjection": true,
+		"validateUpsert": true
+	},
+	"mixins": {
+		"Owner": true,
+		"TimeStamp": true
+	},
+	"properties": {
+		"title": {
+			"type": "string",
+			"description": "Заголовок"
+		},
+		"content": {
+			"type": "string",
+			"description": "Содержимое записи"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"shareholders": {
+			"type": "belongsTo",
+			"model": "Shareholder",
+			"foreignKey": "shareholderId",
+			"desctiption": "Аукционерам"
+		},
+		"information": {
+			"type": "belongsTo",
+			"model": "Information",
+			"foreignKey": "informationId",
+			"desctiption": "Раскрытие информации"
+		},
+		"tradeunion": {
+			"type": "belongsTo",
+			"model": "TradeUnion",
+			"foreignKey": "tradeunionId",
+			"desctiption": "Профсоюз"
+		},
+		"realization": {
+			"type": "belongsTo",
+			"model": "Realization",
+			"foreignKey": "realizationId",
+			"desctiption": "Реализация"
+		},
+		"purchase": {
+			"type": "belongsTo",
+			"model": "Purchase",
+			"foreignKey": "purchaseId",
+			"desctiption": "Закупки"
+		},
+		"connection": {
+			"type": "belongsTo",
+			"model": "Connection",
+			"foreignKey": "connectionId",
+			"desctiption": "Технологическое присоединение"
+		},
+		"tariff": {
+			"type": "belongsTo",
+			"model": "Tariff",
+			"foreignKey": "tariffId",
+			"desctiption": "Тарифы"
+		},
+		"other": {
+			"type": "belongsTo",
+			"model": "Other",
+			"foreignKey": "otherId",
+			"desctiption": "Прочее"
+		},
+		"electricalsafety": {
+			"type": "belongsTo",
+			"model": "ElectricalSafety",
+			"foreignKey": "electricalsafetyId",
+			"desctiption": "Электробезопасность"
+		}
+	},
+	"acls": [
+		{
+			"principalType": "ROLE",
+			"principalId": "admin",
+			"permission": "ALLOW"
+		},
+		{
+			"principalType": "ROLE",
+			"principalId": "user",
+			"permission": "ALLOW"
+		},
+		{
+			"principalType": "ROLE",
+			"principalId": "$unauthenticated",
+			"permission": "ALLOW",
+			"accessType": "READ"
+		}
+	],
+	"methods": {}
+}

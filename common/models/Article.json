@@ -1,0 +1,73 @@
+{
+	"name": "Article",
+	"description": "Публикация",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+	"mixins": {
+		"Owner": true,
+		"TimeStamp": true,
+		"Search": true
+	},
+	"properties": {
+		"name": {
+			"type": "String",
+			"index": true,
+			"required": true,
+			"description": "Название"
+		},
+		"subheader": {
+			"type": "String",
+			"index": false,
+			"description": "Подзаголовок"
+		},
+		"content": {
+			"type": "String",
+			"index": false,
+			"description": "Содержание"
+		},
+		"status": {
+			"type": "Boolean",
+			"index": true,
+			"description": "Статус публикации"
+		},
+		"publishAt": {
+			"type": "Date",
+			"index": true,
+			"description": "Дата публикования"
+		},
+		"thumbnail": {
+			"type": "String",
+			"index": true,
+			"description": "Миниатюра"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"editorAttachments": {
+			"type": "hasAndBelongsToMany",
+			"model": "Attachment"
+		}
+	},
+	"acls": [
+		{
+			"principalType": "ROLE",
+			"principalId": "admin",
+			"permission": "ALLOW"
+		},
+		{
+			"principalType": "ROLE",
+			"principalId": "user",
+			"permission": "ALLOW"
+		},
+		{
+			"principalType": "ROLE",
+			"principalId": "$unauthenticated",
+			"permission": "ALLOW",
+			"accessType": "READ"
+		}
+	],
+	"methods": {}
+}

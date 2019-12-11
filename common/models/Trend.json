@@ -1,0 +1,50 @@
+{
+	"name": "Trend",
+	"description": "Направления компании",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"validateUpsert": true
+	},
+	"mixins": {
+		"Owner": true,
+		"TimeStamp": true,
+		"Search": true
+	},
+	"properties": {
+		"text": {
+			"type": "String",
+			"index": true,
+			"required": true,
+			"description": "Текс тренда"
+		}
+	},
+	"validations": [],
+	"relations": {
+		"aboutCompany": {
+			"type": "hasAndBelongsToMany",
+			"model": "AboutCompany",
+			"description": "О компании"
+		}
+	},
+
+	"acls": [
+		{
+			"principalType": "ROLE",
+			"principalId": "admin",
+			"permission": "ALLOW"
+		},
+		{
+			"principalType": "ROLE",
+			"principalId": "user",
+			"permission": "ALLOW"
+		},
+		{
+			"principalType": "ROLE",
+			"principalId": "$unauthenticated",
+			"permission": "ALLOW",
+			"accessType": "READ"
+		}
+	],
+	"methods": {}
+}

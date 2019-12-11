@@ -1,0 +1,93 @@
+{
+	"name": "CompanyInfo",
+	"description": "Информация о компании",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"idInjection": true,
+		"validateUpsert": true
+	},
+	"mixins": {
+		"Owner": true,
+		"TimeStamp": true
+	},
+	"properties": {
+		"year": {
+			"type": "string",
+			"description": "Год основания"
+		},
+		"yearDesctiption": {
+			"type": "string",
+			"description": "Год основания Описание"
+		},
+		"regions": {
+			"type": "string",
+			"description": "Регионы"
+		},
+		"regionsDescription": {
+			"type": "string",
+			"description": "Регионы Описание"
+		},
+		"stations": {
+			"type": "string",
+			"description": "Станции"
+		},
+		"stationsDescription": {
+			"type": "string",
+			"description": "Станции Описание"
+		},
+		"electricPower": {
+			"type": "string",
+			"description": "Электрическая мощность"
+		},
+		"electricPowerDescription": {
+			"type": "string",
+			"description": "Электрическая мощность Описание"
+		},
+		"heatPower": {
+			"type": "string",
+			"description": "Тепловая можность"
+		},
+		"heatPowerDescription": {
+			"type": "string",
+			"description": "Тепловая можность Описание"
+		},
+		"length": {
+			"type": "string",
+			"description": "Длина линий"
+		},
+		"lengthDescription": {
+			"type": "string",
+			"description": "Длина линий Описание"
+		},
+		"substations": {
+			"type": "string",
+			"description": "Подстанции"
+		},
+		"substationsDescription": {
+			"type": "string",
+			"description": "Подстанции Описание"
+		}
+	},
+	"validations": [],
+	"relations": {},
+	"acls": [
+		{
+			"principalType": "ROLE",
+			"principalId": "admin",
+			"permission": "ALLOW"
+		},
+		{
+			"principalType": "ROLE",
+			"principalId": "user",
+			"permission": "ALLOW"
+		},
+		{
+			"principalType": "ROLE",
+			"principalId": "$unauthenticated",
+			"permission": "ALLOW",
+			"accessType": "READ"
+		}
+	],
+	"methods": {}
+}

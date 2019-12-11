@@ -1,0 +1,22 @@
+.game-results-image-wrapper {
+	display: inline-flex;
+	flex-wrap: wrap;
+	padding: 0 1rem;
+}
+
+.game-results-image {
+	justify-content: flex-end;
+	margin: 0.25rem 0.5rem 0.5rem 0;
+
+	.delete-image {
+		font-size: 20px;
+		position: absolute;
+		margin-left: -2.25rem;
+		margin-top: 0.5rem;
+	}
+
+	img {
+		width: 200px;
+		border: solid 1px;
+	}
+}

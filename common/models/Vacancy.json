@@ -1,0 +1,91 @@
+{
+	"name": "Vacancy",
+	"description": "Вакансия",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"idInjection": true,
+		"validateUpsert": true
+	},
+	"mixins": {
+		"Owner": true,
+		"TimeStamp": true
+	},
+	"properties": {
+		"title": {
+			"type": "string",
+			"description": "Заголовок"
+		},
+		"description": {
+			"type": "string",
+			"description": "Описание вакансии"
+		},
+		"education": {
+			"type": "string",
+			"description": "Образование"
+		},
+		"scope": {
+			"type": "string",
+			"description": "Сфера образования"
+		},
+		"speciality": {
+			"type": "string",
+			"description": "Специальность"
+		},
+		"skills": {
+			"type": "string",
+			"description": "Дополнительные специальные навыки"
+		},
+		"experience": {
+			"type": "string",
+			"description": "Стаж работы"
+		},
+		"pc": {
+			"type": "string",
+			"description": "Уровень владения ПК"
+		},
+		"additional": {
+			"type": "string",
+			"description": "Дополнительные обязанности"
+		},
+		"personal": {
+			"type": "string",
+			"description": "Персональные качества"
+		},
+		"contacts": {
+			"type": "string",
+			"description": "Контакты"
+		},
+		"published": {
+			"type": "Boolean",
+			"index": true,
+			"description": "Статус вакансии"
+		},
+		"removeAt": {
+			"type": "Date",
+			"index": true,
+			"description": "Дата снятия с публикации"
+		}
+	},
+	"validations": [],
+	"relations": {},
+	"acls": [
+		{
+			"principalType": "ROLE",
+			"principalId": "admin",
+			"permission": "ALLOW"
+		},
+		{
+			"principalType": "ROLE",
+			"principalId": "user",
+			"permission": "ALLOW"
+		},
+		{
+			"principalType": "ROLE",
+			"principalId": "$unauthenticated",
+			"permission": "ALLOW",
+			"accessType": "READ"
+		}
+	],
+	"methods": {}
+}

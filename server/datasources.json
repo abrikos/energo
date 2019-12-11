@@ -1,0 +1,20 @@
+{
+  "postgres": {
+    "name": "postgres",
+    "connector": "postgresql"
+  },
+  "storage": {
+    "name": "storage",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "maxFileSize": 104857600
+  },
+  "mail": {
+    "name": "mail",
+    "connector": "mail"
+  },
+  "telegram": {
+    "name": "telegram",
+    "connector": "telegram"
+  }
+}

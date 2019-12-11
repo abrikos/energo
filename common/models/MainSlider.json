@@ -1,0 +1,50 @@
+{
+	"name": "MainSlider",
+	"description": "Слайдер",
+	"base": "PersistedModel",
+	"idInjection": true,
+	"options": {
+		"idInjection": true,
+		"validateUpsert": true
+	},
+	"mixins": {
+		"Owner": true,
+		"TimeStamp": true
+	},
+	"properties": {
+		"name": {
+			"type": "string",
+			"required": true,
+			"description": "Название ссылки"
+		},
+		"link": {
+			"type": "string",
+			"description": "ссылка"
+		},
+		"thumbnail": {
+			"type": "string",
+			"description": "Слайд"
+		}
+	},
+	"validations": [],
+	"relations": {},
+	"acls": [
+		{
+			"principalType": "ROLE",
+			"principalId": "admin",
+			"permission": "ALLOW"
+		},
+		{
+			"principalType": "ROLE",
+			"principalId": "user",
+			"permission": "ALLOW"
+		},
+		{
+			"principalType": "ROLE",
+			"principalId": "$unauthenticated",
+			"permission": "ALLOW",
+			"accessType": "READ"
+		}
+	],
+	"methods": {}
+}

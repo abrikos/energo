@@ -1,0 +1,1 @@
+export { default as EnergeticsPage } from './EnergeticsPage';

@@ -1,0 +1,7 @@
+{
+  "remoting": {
+    "cors": false
+  },
+  "legacyExplorer": false,
+  "logoutSessionsOnSensitiveChanges": true
+}

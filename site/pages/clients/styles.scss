@@ -1,0 +1,51 @@
+.MainBackGroundClient p {
+	text-align: justify;
+	display: block;
+}
+
+.MainBackGroundClient {
+	background: #e5e5e5 url('./img/viss.png') no-repeat;
+	background-size: 100%;
+	padding-bottom: 50px;
+	min-height: 50vh;
+}
+.ClassNameSection.client {
+	line-height: 35px;
+	margin: 0;
+	padding: 25px 0;
+	font-size: 20px;
+	line-height: 29px;
+}
+.push {
+	list-style: none;
+}
+.push li {
+	position: relative;
+	padding: 13px 0 13px 40px;
+}
+.push li:before {
+	position: absolute;
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: #4f5151;
+	content: '';
+	left: 0;
+	transition: 0.3s ease-in-out;
+	top: 27px;
+}
+.push li:after {
+	position: absolute;
+	border-left: 1px dotted #4f5151;
+	width: 1px;
+	bottom: -12px;
+	content: '';
+	left: 3px;
+	top: 48px;
+}
+.push li:hover:before {
+	box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.push li:last-child:after {
+	content: none;
+}
